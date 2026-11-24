@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal estudiantil | San Arley de los Alpes</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="pagina">
+    <aside class="barra-lateral">
+      <div class="marca"><span class="marca-icono">SA</span><span>San Arley<br><small>de los Alpes</small></span></div>
+      <div class="menu-label">MENÚ PRINCIPAL</div>
+      <div class="menu-activo"><span>▦</span> Registro de notas</div>
+      <div class="nota-lateral">
+        <span class="punto"></span>
+        <p>Portal académico</p>
+        <small>Consulta tu rendimiento de forma sencilla.</small>
+      </div>
+      <div class="lateral-pie">AÑO ESCOLAR<br><strong>2026</strong></div>
+    </aside>
+
+    <main class="contenido">
+      <header class="topbar">
+        <div>
+          <p class="miga">PORTAL / ESTUDIANTES</p>
+          <h1>Registro académico</h1>
+        </div>
+        <div class="avatar">SA</div>
+      </header>
+
+      <section class="bienvenida">
+        <div>
+          <span class="etiqueta">SISTEMA DE CALIFICACIONES</span>
+          <h2>¡Bienvenido!</h2>
+          <p>Ingresa tus datos y registra tus cinco notas para conocer tu promedio final.</p>
+        </div>
+        <div class="ilustracion" aria-hidden="true">
+          <div class="hoja"><span>✓</span><i></i><i></i><i></i></div>
+          <div class="lapiz"></div>
+        </div>
+      </section>
+
+      <form id="formulario-notas" class="panel">
+        <div class="panel-cabecera">
+          <div><span class="numero">01</span><h3>Información personal</h3></div>
+          <p>Completa todos los campos</p>
+        </div>
+        <div class="datos-grid">
+          <label>Nombre
+            <input id="nombre" type="text" placeholder="Ej. Valentina" required>
+          </label>
+          <label>Apellido
+            <input id="apellido" type="text" placeholder="Ej. Pérez" required>
+          </label>
+          <label class="ancho-completo">Correo electrónico
+            <input id="correo" type="email" placeholder="nombre@correo.com" required>
+          </label>
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="panel-cabecera notas-cabecera">
+          <div><span class="numero">02</span><h3>Calificaciones</h3></div>
+          <span class="escala">Escala de 0.0 a 5.0</span>
+        </div>
+        <div class="notas-grid">
+          <label><span class="nota-num">NOTA 01</span><input class="nota" type="number" min="0" max="5" step="0.01" placeholder="0.0" required></label>
+          <label><span class="nota-num">NOTA 02</span><input class="nota" type="number" min="0" max="5" step="0.01" placeholder="0.0" required></label>
+          <label><span class="nota-num">NOTA 03</span><input class="nota" type="number" min="0" max="5" step="0.01" placeholder="0.0" required></label>
+          <label><span class="nota-num">NOTA 04</span><input class="nota" type="number" min="0" max="5" step="0.01" placeholder="0.0" required></label>
+          <label><span class="nota-num">NOTA 05</span><input class="nota" type="number" min="0" max="5" step="0.01" placeholder="0.0" required></label>
+        </div>
+
+        <p id="mensaje-error" class="error" role="alert"></p>
+        <button class="boton-calcular" type="submit">Calcular mi promedio <span>↗</span></button>
+      </form>
+
+      <section id="resultado" class="resultado oculto" aria-live="polite">
+        <div class="resultado-titulo"><div><span class="numero">03</span><h3>Tu resultado</h3></div><span class="check">✓</span></div>
+        <div class="resultado-contenido">
+          <div class="promedio">
+            <small>PROMEDIO FINAL</small>
+            <strong id="promedio">0.00</strong>
+            <span id="estado" class="estado"></span>
+          </div>
+          <div class="datos-resultado">
+            <p><span>Estudiante</span><strong id="resumen-estudiante"></strong></p>
+            <p><span>Correo</span><strong id="resumen-correo"></strong></p>
+          </div>
+        </div>
+        <button type="button" id="nuevo-calculo" class="boton-nuevo">+ Registrar otro estudiante</button>
+      </section>
+
+      <footer>COLEGIO SAN ARLEY DE LOS ALPES <span>•</span> PORTAL ACADÉMICO</footer>
+    </main>
+  </div>
+</body>
+</html>
